@@ -14,6 +14,7 @@
 @import "../jslibs/photoswipe/dist/photoswipe.css";
 @import "../jslibs/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
 @import "../jslibs/flickr-justified-gallery/dist/fjGallery.css";
+@import "header.css";
 
 html.dark {
   color-scheme: dark;
@@ -43,6 +44,12 @@ img.lazyload:not([src]) {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+/* Estilo para a div que envolve os botões */
+.menu {
+  position: fixed;
+  display: flex;
 }
 
 /* Fixed Buttons */

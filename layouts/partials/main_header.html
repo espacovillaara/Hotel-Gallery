@@ -6,15 +6,15 @@
   {{ if .Params.background_image }}
     <img src="{{ .Params.background_image | relURL }}" alt="background image" class="background-image">
   {{ end }}
-  <div class="content">
+  <div class="z-10 absolute">
     {{ if .Params.profile_image }}
-      <div class="profile-container">
-        <img src="{{ .Params.profile_image | relURL }}" alt="profile picture" class="profile-picture">
+      <div class="flex items-center justify-center">
+        <img src="{{ .Params.profile_image | relURL }}" alt="profile picture" class=" w-24 md:w-32 lg:w-48 rounded-full">
       </div>
     {{ end }}
     <h1 class="text-3xl font-semibold md:text-4xl">{{ .Title }}</h1>
     {{if .Params.button_url}}
-      <a href="{{.Params.button_url}}" class="home-button ">{{.Params.button_desc}}</a>
+      <a href="{{.Params.button_url}}" class="home-button" target="_blank">{{.Params.button_desc}}</a>
     {{ end }}
   </div>
 </div>

@@ -90,4 +90,14 @@ if (gallery) {
     transitionDuration: false,
     calculateItemsHeight: true,
   });
+
+
+
+
+
+
+  
 }
+document.getElementById('languageDropdown').addEventListener('change', function() {
+  window.location.href = this.value;
+});

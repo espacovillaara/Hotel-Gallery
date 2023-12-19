@@ -7,7 +7,7 @@
     {{- range $value := .Ancestors.Reverse -}}
       {{- if .Params.private -}}{{- $private = true -}}{{- end -}}
     {{- end -}}
-    {{- if not $private -}}
+    {{- if not $private -}} 
         {{- if .Permalink -}}
   <url>
     <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}

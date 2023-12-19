@@ -1,0 +1,14 @@
+{{ $siteLanguages := site.Languages }}
+{{ $pageLang := .Page.Lang }}
+<select id="languageDropdown" class="bg-transparent">
+    {{- range .Page.AllTranslations }}
+        {{ $translation := . }}
+        {{- range sort $siteLanguages "Weight" "asc" }}
+            {{- if eq $translation.Lang .Lang }}
+                <option value="{{ $translation.Permalink | relURL }}" {{ if eq $pageLang .Lang }}selected{{ end }}>
+                    {{ .Params.languageFlag }}
+                </option>
+            {{- end }}
+        {{- end }}
+    {{- end }}
+</select>

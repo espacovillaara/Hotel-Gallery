@@ -5,7 +5,10 @@
     <ul class="my-2 flex flex-wrap justify-center">
       {{ range .Site.Menus.footer }}
         <li>
-          <a href="{{ .URL }}" class="mx-2">
+          <a href="{{ .URL }}" target="_blank"  class="mx-2">
+            {{ if .Params.image }}
+              <img src="{{ .Params.image | relURL }}" alt="{{ .Name }}" class="icon">
+            {{ end }}
             {{ .Name }}
           </a>
         </li>

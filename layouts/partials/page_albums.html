@@ -1,11 +1,10 @@
 <div class="mb-5 mt-5 flex flex-wrap items-center justify-center gap-10 px-2 ">
-  {{ range where .Pages.ByWeight.Reverse "Params.private" "ne" true }}
+  {{ range .Pages.ByWeight }}
     {{ $images := .Resources.ByType "image" }}
     {{ if gt (len $images) 0 }}
       {{ $featured := ($images.GetMatch (.Params.featured_image | default "*feature*")) | default (index $images 0) }}
       {{ $thumbnail := $featured.Fill "600x400" }}
       {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
-      {{ $counts := partial "get_counts.html" . }}
 
       <a href="{{ .RelPermalink }}" class=" bg-neutral-100 transition-[filter] hover:brightness-90 dark:bg-neutral-800 dark:hover:brightness-110 fj-gallery-item-animation" title="{{ .Title }}">
         <div class="h-auto shadow-2xl">
@@ -17,8 +16,9 @@
               {{ .Title }}
             </h5>
             <p class="text-sm font-normal text-neutral-600 dark:text-neutral-400">
-              {{- i18n "photoCount" $counts.images }}
-              {{ if gt $counts.albums 0 }}{{ i18n "in" }} {{ i18n "albumCount" $counts.albums }}{{ end -}}
+            {{ if .Params.desc }}
+              {{.Params.desc}}
+            {{ end }}
             </p>
           </div>
         </div>

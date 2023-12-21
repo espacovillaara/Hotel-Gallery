@@ -1,17 +1,15 @@
 <div class="button-container">
-  {{ range .Site.RegularPages }}
-    {{ if eq .Section "buttons" }}
-      {{if eq .Title "whatsapp"}}
-      {{ $numeroTelefone := .Params.phone }}
-      {{ $mensagem := .Params.message }}
+  {{ range .Site.Params.buttons }}
+    {{ if eq .title "whatsapp" }}
+      {{ $numeroTelefone := .phone }}
+      {{ $mensagem := .message }}
       <a class="floating-button" href="{{ printf "https://api.whatsapp.com/send?phone=%s&text=%s" $numeroTelefone $mensagem }}" target="_blank" title="Iniciar conversa no WhatsApp">
         <img src="{{ "images/whatsapp.png" | relURL }}" alt="Ícone do WhatsApp" class="icon">
       </a>
-      {{ else }}
-      <!-- <a class="floating-button" href="{{ .Params.link }}" target="_blank" title="{{ .Params.hover }}">
+    {{ else }}
+      <a class="floating-button" href="{{ .Params.link }}" target="_blank" title="{{ .Params.hover }}">
         <img src="{{ .Params.image | relURL }}" alt="icone" class="icon">
-      </a> -->
-      {{ end }}
+      </a>
     {{ end }}
   {{ end }}
 </div>

@@ -1,0 +1,13 @@
+{{ if .Params.features }}
+
+<div class="flex flex-row justify-center">
+    {{ with .Params.features }}
+        {{ range $key, $value := . }}
+        <div class="mr-1 mt-4">
+            <img src="{{ printf "images/hotel-icons/%s" $value | relURL }}" alt="icone" class="icon">
+        </div>
+        {{ end }}
+    {{ end }}
+</div>
+
+{{ end }}

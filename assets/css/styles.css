@@ -93,3 +93,13 @@ img.lazyload:not([src]) {
   color: #333333;
   font-size: 90%;
 }
+
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/beach-composition.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}

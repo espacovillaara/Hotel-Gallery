@@ -1,12 +1,14 @@
-{{if .Content}}
-  <div class="bg-cyan-50 flex flex-wrap items-center justify-center mt-4 mx=6 mt=6">
-    <div class="my-4 prose prose-neutral mx-6 max-w-screen-md dark:prose-invert">
-      {{ .Content }}
-    </div>
-    <div class="mx=6 mt=6 ">
-      {{if .Params.map }}
-        <iframe class="mx-6 my-6 hidden md:block"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30984.201349835814!2d-44.32393032660639!3d-23.151107893448685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c552225f00a67%3A0x1489409c1325ebaf!2zRXNwYcOnbyBWaWxsYSBBcsOhIGUgQXLDoSBCaXN0csO0!5e0!3m2!1sen!2sbr!4v1702566823626!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      {{end}}
+{{ if .Content }}
+  <div class="flex flex-wrap items-center justify-center mt-4 mx-2">
+    <div class=" mx-4 flex bg-white bg-opacity-80 p-6 rounded-lg drop-shadow-2xl">
+      <div class="prose leading-tight lg:prose-lg max-w-screen-md">
+        {{ .Content }}
+      </div>
+      <div class="">
+        {{ if .Params.map }}
+          <iframe class="ml-6 rounded hidden md:block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30984.201349835814!2d-44.32393032660639!3d-23.151107893448685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c552225f00a67%3A0x1489409c1325ebaf!2zRXNwYcOnbyBWaWxsYSBBcsOhIGUgQXLDoSBCaXN0csO0!5e0!3m2!1sen!2sbr!4v1702566823626!5m2!1sen!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        {{ end }}
+      </div>
     </div>
   </div>
 {{ end }}

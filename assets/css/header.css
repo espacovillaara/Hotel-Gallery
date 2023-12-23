@@ -7,9 +7,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff; /* Adapte a cor do texto conforme necessário */
+    color: #fff; 
     text-align: center;
-    overflow: hidden; /* Para garantir que o filtro escuro não ultrapasse a borda da div */
+    overflow: hidden;
   }
   
   .home-header::before {
@@ -17,7 +17,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Ajuste a opacidade conforme necessário */
+    background-color: rgba(0, 0, 0, 0.09); /* Ajuste a opacidade conforme necessário */
     z-index: 1;
   }
   .header-content {

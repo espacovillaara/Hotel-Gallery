@@ -1,21 +1,27 @@
-{{ if .Title }}
 <div class="home-header">
   {{ if .Params.viemo_code }}
-    <iframe class="background-video" src="https://player.vimeo.com/video/{{ .Params.viemo_code}}?autoplay=1&loop=1&muted=1&controls=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  {{ end }} 
+    <iframe class="background-video"
+      src="https://player.vimeo.com/video/{{ .Params.viemo_code}}?autoplay=1&loop=1&muted=1&controls=0" frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  {{ end }}
   {{ if .Params.background_image }}
     <img src="{{ .Params.background_image | relURL }}" alt="background image" class="background-image">
   {{ end }}
-  <div class="z-10 absolute">
+  <div class="absolute z-10">
     {{ if .Params.profile_image }}
       <div class="flex items-center justify-center">
-        <img src="{{ .Params.profile_image | relURL }}" alt="profile picture" class=" w-24 md:w-32 lg:w-48 rounded-full">
+        <img src="{{ .Params.profile_image | relURL }}" alt="profile picture" class=" w-32 lg:w-48 rounded-full">
       </div>
     {{ end }}
-    <h1 class="text-3xl font-semibold md:text-4xl">{{ .Title }}</h1>
+    {{ if .Title }}
+      <div>
+        <h1 class="text-3xl font-semibold md:text-4xl">{{ .Title }}</h1>
+      </div>
+    {{ end }}
     {{if .Params.button_url}}
-      <a href="{{.Params.button_url}}" class="home-button" target="_blank">{{.Params.button_desc}}</a>
+      <div class="">
+        <a href="{{.Params.button_url}}" class="home-button" target="_blank">{{.Params.button_desc}}</a>
+      </div>
     {{ end }}
   </div>
 </div>
-{{ end }}

@@ -97,7 +97,7 @@ img.lazyload:not([src]) {
 body{
   margin: 0;
   padding: 0;
-  background-image: url('/images/beach-composition.jpg');
+  background-image: url('/images/beach-composition.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

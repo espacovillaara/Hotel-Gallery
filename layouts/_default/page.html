@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{- partial "page_header.html" . -}}
-  <div class="mb-12 mt-9 px-6">
-    <div class="prose prose-neutral mx-auto max-w-screen-md dark:prose-invert">
+  <div class="mb-12 mt-9 px-6 flex items-center justify-center">
+    <div class="prose prose-neutral flex flex-col bg-slate-100 bg-opacity-70 p-6 mx-4 rounded-lg drop-shadow-md">
       {{ .Content }}
     </div>
   </div>
